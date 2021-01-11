@@ -1,6 +1,3 @@
-# codal-stm32-PNUCLEO_WB55RG
-Codal target for the PNUCLEO_WB55RG Board
-
 # Codal target for the PNUCLEO_WB55RG Board
 
 Codal target for the [P-NUCLEO-WB55](https://www.st.com/en/evaluation-tools/p-nucleo-wb55.html). Codal is the core set of drivers, mechanisms and types that make up the runtime for a board in Makecode.
