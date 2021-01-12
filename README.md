@@ -8,7 +8,7 @@ The codal runtime provides an easy to use environment for programming the board 
 
 In addition to supporting development in C/C++, the runtime is also designed specifically to support higher level languages provided by our partners that target physical computing and computer science education. It is currently used as a support library for Microsoft MakeCode
 
-Codal-core must be implemented by third party developper to support new hardware target. This repository constain the codal implementation for the [B-L475E-IOT01A](http://www.st.com/en/evaluation-tools/b-l475e-iot01a.html) Discovery kit for IoT node.
+Codal-core must be implemented by third party developper to support new hardware target.
 
 ## Board Information  
 
