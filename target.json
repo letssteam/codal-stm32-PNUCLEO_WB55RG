@@ -26,31 +26,31 @@
         "CODAL_DEBUG":"CODAL_DEBUG_ENABLED",
         "DEVICE_USB":0,
         "CODAL_TIMESTAMP":"uint32_t",
-        "PROCESSOR_WORD_TYPE":"uint32_t",
+        "PROCESSOR_WORD_TYPE":"uintptr_t",
         "BLUENRG_MS" : 1,
         "USE_STM32L475E_IOT01" : 1,
         "SET_L2CAP_CONN_UPD_REQ_COMMAND" : 1,
         "DENABLE_SPI_FIX" : 1
     },
-    "definitions":"-DSTM32L4 -DSTM32L4xx -DSTM32L475xx -DDMESG_SERIAL_DEBUG -include codal-stm32-PNUCLEO_WB55RG/inc/localconf.h",
+    "definitions":"-DSTM32L4 -DSTM32L4xx -DSTM32L475xx -DHAL_UART_MODULE_ENABLED -DDMESG_SERIAL_DEBUG -include codal-stm32-PNUCLEO_WB55RG/inc/localconf.h",
     "cmake_definitions":{
     },
-    "cpu_opts":"-mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16",
+    "cpu_opts":"-mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard",
     "asm_flags":"-fno-exceptions -fno-unwind-tables",
-    "c_flags":"-std=gnu11 -D__weak=\"__attribute__((weak))\" -D__packed=\"__attribute__((__packed__))\" -DSTM32L475xx -fwrapv -Warray-bounds -ffunction-sections -fdata-sections -g -fstack-usage -Wall -fno-inline",
-    "cpp_flags":"-std=c++11 -Wno-register -D__weak=\"__attribute__((weak))\" -D__packed=\"__attribute__((__packed__))\" -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wl,--sort-section=alignment -Wno-array-bounds -DSTM32L475xx -g -fstack-usage -Wall -fno-inline",
-    "linker_flags":"-Wl,--no-wchar-size-warning -Wl,--gc-sections -static -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16",
+    "c_flags":"-std=c18 -u _printf_float  -fwrapv -Warray-bounds -Wno-format",
+    "cpp_flags":"-std=c++2a -u _printf_float  -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wl,--sort-section=alignment -Warray-bounds -Wno-register -Wno-format",
+    "linker_flags":"-Wl,--no-wchar-size-warning -Wl,--gc-sections -Wl,--defsym=LD_FLASH_OFFSET=0 -Wl,--defsym=LD_MAX_SIZE=524288 -Wl,--defsym=LD_MAX_DATA_SIZE=98304 -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16",
     "libraries":[
         {
             "name":"codal-core",
             "url":"https://github.com/letssteam/codal-core",
-            "branch":"master",
+            "branch":"main",
             "type":"git"
         },
         {
             "name":"codal-stm32",
             "url":"https://github.com/letssteam/codal-stm32",
-            "branch":"master",
+            "branch":"main",
             "type":"git"
         }
     ]
