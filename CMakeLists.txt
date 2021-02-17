@@ -2,6 +2,12 @@ project(codal-stm32-PNUCLEO_WB55RG)
 
 include("${CODAL_UTILS_LOCATION}")
 
+set(CMAKE_CXX_CLANG_TIDY
+    clang-tidy;
+    --extra-arg=-std=c++20;
+    --extra-arg=-Wno-error;
+    --extra-arg=-Wno-register;)
+
 # find sources and headers
 RECURSIVE_FIND_DIR(TOP_LEVEL_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/inc" "*.h")
 RECURSIVE_FIND_FILE(TOP_LEVEL_SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src" "*.c")

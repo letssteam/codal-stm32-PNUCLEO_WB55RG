@@ -21,7 +21,7 @@ void GPIOSample_main(){
     system_timer_event_every(1000, ID_PIN_P0, SENSOR_UPDATE_NEEDED);
     EventModel::defaultEventBus->listen(ID_PIN_P0, SENSOR_UPDATE_NEEDED, onSampleEvent);
 
-    while(1) {
+    while(true) {
         PNUCLEO_WB55RG.io.led1.setDigitalValue(1);
         PNUCLEO_WB55RG.sleep(1000);
 

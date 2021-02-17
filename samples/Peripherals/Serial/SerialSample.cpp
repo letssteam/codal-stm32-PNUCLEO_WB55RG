@@ -10,7 +10,7 @@ void SerialSample_main(){
     
     PNUCLEO_WB55RG.sleep(1000);
     
-    while(1) {
+    while(true) {
         PNUCLEO_WB55RG.io.led1.setDigitalValue(1);
 
         printf("\nVALUE = %d.%d degC\n", 0, 0);
