@@ -26,7 +26,7 @@
         "CODAL_DEBUG":"CODAL_DEBUG_ENABLED",
         "DEVICE_USB":0,
         "CODAL_TIMESTAMP":"uint32_t",
-        "PROCESSOR_WORD_TYPE":"uintptr_t",
+        "PROCESSOR_WORD_TYPE":"uintptr_t"
     },
     "definitions":"-DSTM32WBxx -DSTM32WB55xx -DDMESG_SERIAL_DEBUG -include codal-stm32-PNUCLEO_WB55RG/inc/localconf.h",
     "cmake_definitions":{
