@@ -13,10 +13,12 @@ void Update_IT_callback(uint16_t channel_bitmsk) {
     state = !state;
 }
 
-#if defined(TIM6)
-TIM_TypeDef* Instance = TIM5;
+#if defined(TIM16)
+TIM_TypeDef* Instance = TIM16;
+auto Instance_IRQn = TIM16_IRQn;
 #else
 TIM_TypeDef* Instance = TIM2;
+auto Instance_IRQn = TIM2_IRQn;
 #endif
 
 /**
@@ -43,7 +45,7 @@ uint16_t delta;
 uint32_t cycleScale = 0;
 
 void TimerSample_main() {
-    tim = new STM32LowLevelTimer(TIM5, TIM5_IRQn);
+    tim = new STM32LowLevelTimer(Instance, Instance_IRQn);
     tim->setCompare(0, 10000000);
     tim->setIRQ(Update_IT_callback);
     tim->enable();
