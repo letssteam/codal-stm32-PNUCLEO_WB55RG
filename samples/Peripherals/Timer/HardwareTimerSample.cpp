@@ -1,4 +1,6 @@
 #include "HardwareTimerSample.h"
+
+#include "HardwareTimer.h"
 #include "STM32Pin.h"
 #include "wiring_time.h"
 
@@ -8,7 +10,8 @@ STM32Pin led1(ID_PIN_P19, PinNumber::LED_1, PIN_CAPABILITY_AD);
 
 bool state = false;
 
-void Update_IT_callback(void) {
+void Update_IT_callback(void)
+{
     led1.setDigitalValue((int)state);
     state = !state;
 }
@@ -21,7 +24,8 @@ TIM_TypeDef* Instance = TIM2;
 
 HardwareTimer* tim;
 
-void HardwareTimerSample_main() {
+void HardwareTimerSample_main()
+{
     // Instantiate HardwareTimer object. Thanks to 'new' instanciation, HardwareTimer is not destructed when this
     // function is finished.
     tim = new HardwareTimer(Instance);
