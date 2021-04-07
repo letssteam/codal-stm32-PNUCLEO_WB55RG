@@ -1,22 +1,18 @@
-#ifndef STM32_IOT_NODE_H
-#define STM32_IOT_NODE_H
-
-#include "stm32_def.h"
-#include "CodalComponent.h"
-#include "CodalDevice.h"
-#include "CodalFiber.h"
-#include "CodalDmesg.h"
-#include "codal-core/inc/types/Event.h"
-#include "codal-core/inc/driver-models/Timer.h"
-
-#include "NotifyEvents.h"
-#include "MessageBus.h"
+#ifndef STM32PNUCLEO_WB55RG_H
+#define STM32PNUCLEO_WB55RG_H
 
 #include "Button.h"
+#include "CodalComponent.h"
+#include "CodalDevice.h"
+#include "CodalDmesg.h"
+#include "CodalFiber.h"
+#include "Event.h"
+#include "MessageBus.h"
+#include "NotifyEvents.h"
 #include "STM32LowLevelTimer.h"
 #include "STM32PNUCLEO_WB55RGIO.h"
-
-
+#include "Timer.h"
+#include "stm32_def.h"
 
 // Status flag values
 #define DEVICE_INITIALIZED 0x01
@@ -27,74 +23,65 @@
  * Represents the device as a whole, and includes member variables that represent various device drivers
  * used to control aspects of the STM32 IOT node.
  */
-namespace codal
-{
-    class STM32PNUCLEO_WB55RG : public CodalComponent
-    {
-        public:
-            STM32LowLevelTimer lowLevelTimer;
-            Timer timer;
-            MessageBus     messageBus;
+namespace codal {
+class STM32PNUCLEO_WB55RG : public CodalComponent {
+  public:
+    STM32LowLevelTimer lowLevelTimer;
+    Timer timer;
+    MessageBus messageBus;
 
-            STM32PNUCLEO_WB55RGIO io;
+    STM32PNUCLEO_WB55RGIO io;
 
-            //Button buttonUSER;
-            
-            /**
-             * Constructor.
-             */
-            STM32PNUCLEO_WB55RG();
+    // Button buttonUSER;
 
-            /**
-             * Post constructor initialisation method.
-             */
-            int init() override final;
+    /**
+     * Constructor.
+     */
+    STM32PNUCLEO_WB55RG();
 
-            /**
-             * Delay execution for the given amount of time.
-             *
-             * If the scheduler is running, this will deschedule the current fiber and perform
-             * a power efficient, concurrent sleep operation.
-             *
-             * If the scheduler is disabled or we're running in an interrupt context, this
-             * will revert to a busy wait.
-             *
-             * Alternatively: wait, wait_ms, wait_us can be used which will perform a blocking sleep
-             * operation.
-             *
-             * @param milliseconds the amount of time, in ms, to wait for. This number cannot be negative.
-             *
-             */
-            virtual void sleep(uint32_t milliseconds){
-                fiber_sleep(milliseconds);
-            }
+    /**
+     * Post constructor initialisation method.
+     */
+    int init() override final;
 
-            /**
-             * A periodic callback invoked by the fiber scheduler idle thread.
-             * We use this for any low priority, background housekeeping.
-             */
-            virtual void idleCallback(){
-                codal_dmesg_flush();
-            }
+    /**
+     * Delay execution for the given amount of time.
+     *
+     * If the scheduler is running, this will deschedule the current fiber and perform
+     * a power efficient, concurrent sleep operation.
+     *
+     * If the scheduler is disabled or we're running in an interrupt context, this
+     * will revert to a busy wait.
+     *
+     * Alternatively: wait, wait_ms, wait_us can be used which will perform a blocking sleep
+     * operation.
+     *
+     * @param milliseconds the amount of time, in ms, to wait for. This number cannot be negative.
+     *
+     */
+    virtual void sleep(uint32_t milliseconds) { fiber_sleep(milliseconds); }
 
-            /**
-             * A periodic callback invoked by the fiber scheduler every SCHEDULER_TICK_PERIOD_MS.
-             */
-            virtual void periodicCallback(){
-            }
+    /**
+     * A periodic callback invoked by the fiber scheduler idle thread.
+     * We use this for any low priority, background housekeeping.
+     */
+    virtual void idleCallback() { codal_dmesg_flush(); }
 
-            /**
-             * Determine the time since this board was last reset.
-             *
-             * @return The time since the last reset, in milliseconds.
-             *
-             * @note This will value overflow after 1.6 months.
-             */
-            CODAL_TIMESTAMP systemTime(){
-                return system_timer_current_time();
-            }
-    };
+    /**
+     * A periodic callback invoked by the fiber scheduler every SCHEDULER_TICK_PERIOD_MS.
+     */
+    virtual void periodicCallback() {}
 
-    extern STM32PNUCLEO_WB55RG *default_device_instance;
-}
+    /**
+     * Determine the time since this board was last reset.
+     *
+     * @return The time since the last reset, in milliseconds.
+     *
+     * @note This will value overflow after 1.6 months.
+     */
+    CODAL_TIMESTAMP systemTime() { return system_timer_current_time(); }
+};
+
+extern STM32PNUCLEO_WB55RG* default_device_instance;
+}  // namespace codal
 #endif
