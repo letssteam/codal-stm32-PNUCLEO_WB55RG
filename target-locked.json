@@ -4,6 +4,7 @@
     "c_flags": "-std=c11 -u _printf_float  -fwrapv -Warray-bounds -Wno-format",
     "cmake_definitions": {},
     "config": {
+        "BOARD_NAME": "\"PNUCLEO_WB55RG\"",
         "CODAL_DEBUG": "CODAL_DEBUG_ENABLED",
         "CODAL_TIMESTAMP": "uint32_t",
         "DEVICE_COMPONENT_COUNT": 30,
@@ -27,7 +28,7 @@
     },
     "cpp_flags": "-std=c++17 -u _printf_float  -fwrapv -fno-rtti -fno-threadsafe-statics -fno-exceptions -fno-unwind-tables -Wl,--gc-sections -Wl,--sort-common -Wl,--sort-section=alignment -Warray-bounds -Wno-register -Wno-volatile -Wno-format",
     "cpu_opts": "-mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard",
-    "definitions": "-DSTM32WBxx -DSTM32WB55xx -DHAL_UART_MODULE_ENABLED -DDMESG_SERIAL_DEBUG -include codal-stm32-PNUCLEO_WB55RG/inc/localconf.h",
+    "definitions": "-DSTM32WBxx -DSTM32WB55xx -DHAL_UART_MODULE_ENABLED -DDMESG_SERIAL_DEBUG -include codal-stm32-PNUCLEO_WB55RG/inc/localconf.h -DUSBCON -DUSBD_USE_CDC -DHAL_PCD_MODULE_ENABLED -DUSBD_CLASS_BOS_ENABLED=1",
     "device": "PNUCLEO_WB55RG",
     "generate_bin": true,
     "generate_hex": true,
@@ -39,7 +40,7 @@
             "url": "https://github.com/letssteam/codal-core"
         },
         {
-            "branch": "c997203c8f4a9120d1594bd805d2fbc9c36b6538",
+            "branch": "9a78256146eabd6c2f62a66543d7837fd1e32857",
             "name": "codal-stm32",
             "type": "git",
             "url": "https://github.com/letssteam/codal-stm32"
@@ -48,6 +49,6 @@
     "linker_flags": "-Wl,--no-wchar-size-warning -Wl,--gc-sections -Wl,--defsym=LD_FLASH_OFFSET=0 -Wl,--defsym=LD_MAX_SIZE=524288 -Wl,--defsym=LD_MAX_DATA_SIZE=98304 -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16",
     "post_process": "",
     "processor": "STM32WB",
-    "snapshot_version": "v0.0.12",
+    "snapshot_version": "v0.0.13",
     "toolchain": "ARM_GCC"
 }
