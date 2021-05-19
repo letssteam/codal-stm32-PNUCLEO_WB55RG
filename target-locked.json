@@ -44,7 +44,7 @@
             "url": "https://github.com/letssteam/codal-core"
         },
         {
-            "branch": "ec3308669acc0ad7ccbcb7b301fbb565f34afe96",
+            "branch": "b77cc72cf5912930bff70556d43f2c523b093eaa",
             "name": "codal-stm32",
             "type": "git",
             "url": "https://github.com/letssteam/codal-stm32"
@@ -56,7 +56,7 @@
     "processor": "STM32L4",
     "product_line": "STM32WB55xx",
     "series": "STM32WBxx",
-    "snapshot_version": "v0.1.0",
+    "snapshot_version": "v0.1.1",
     "toolchain": "ARM_GCC",
     "variant": "STM32WBxx/WB55R(C-E-G)V"
 }
