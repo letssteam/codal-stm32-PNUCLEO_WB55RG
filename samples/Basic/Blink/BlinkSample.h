@@ -7,6 +7,6 @@
 #define SAMPLE_MAIN BlinkSample_main
 #endif
 
-void BlinkSample_main();
+void BlinkSample_main(codal::STM32PNUCLEO_WB55RG& pnucleoWB55RG);
 
 #endif
