@@ -5,20 +5,21 @@
             "type": "cortex-debug",
             "request": "launch",
             "servertype": "openocd",
-            "cwd": "${workspaceFolder}",
-            "executable": "${workspaceFolder}/build/PNUCLEO_WB55RG",
+            "cwd": "${workspaceFolder}/../../",
+            "executable": "${workspaceFolder}/../../build/STM32",
             "name": "Debug (OpenOCD)",
             "device": "STM32WB55RGx",
-            "svdFile": "${workspaceFolder}/libraries/codal-stm32-PNUCLEO_WB55RG/scripts/STM32WB55x.svd",
+            "svdFile": "${workspaceFolder}/scripts/STM32WB55x.svd",
             "searchDir": [
                 "/usr/share/openocd/scripts/",
-                "${workspaceFolder}/libraries/codal-stm32-PNUCLEO_WB55RG/scripts/"
+                "${workspaceFolder}/scripts/"
             ],
             "configFiles": [
                 "openocd.cfg"
             ],
             "preLaunchTask": "flash",
             "runToMain": true,
+            "demangle": true,
             "preLaunchCommands": [
                 "set mem inaccessible-by-default off",
                 "enable breakpoint",
