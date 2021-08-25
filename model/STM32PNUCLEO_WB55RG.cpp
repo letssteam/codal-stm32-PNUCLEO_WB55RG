@@ -17,9 +17,7 @@ STM32PNUCLEO_WB55RG::STM32PNUCLEO_WB55RG()
       timer(lowLevelTimer),
       serial(io.rx, io.tx),
       i2c1(io.sda, io.scl),
-      i2c2(io.sda2, io.scl2),
-      spi1(io.miso, io.mosi, io.sclk),
-      spi3(io.miso3, io.mosi3, io.sclk3)
+      spi1(io.miso, io.mosi, io.sclk)
 {
     // Clear our status
     status                  = 0;

@@ -35,9 +35,7 @@ class STM32PNUCLEO_WB55RG : public CodalComponent {
 
     STM32Serial serial;
     STM32I2C i2c1;  // External on arduino stardard pins
-    STM32I2C i2c2;  // Internal only used by MEMS sensors
     STM32SPI spi1;
-    STM32SPI spi3;
 
     STM32PNUCLEO_WB55RGIO io;
 
