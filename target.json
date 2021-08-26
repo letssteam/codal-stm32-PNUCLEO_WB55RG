@@ -34,7 +34,7 @@
     "DEVICE_I2C_IRQ_SHARED": 1,
     "CODAL_PROVIDE_PRINTF": 1,
     "BOARD_NAME": "\"PNUCLEO_WB55RG\"",
-    "PERIPHERAL_PINS": "PeripheralPins",
+    "PERIPHERAL_PINS": "PeripheralPins_P_NUCLEO_WB55RG",
     "VARIANT": "variant_P_NUCLEO_WB55RG",
     "VARIANT_H": "\"variant_P_NUCLEO_WB55RG.h\"",
     "ARDUINO_P_NUCLEO_WB55RG": 1,
