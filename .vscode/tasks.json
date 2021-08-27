@@ -57,6 +57,22 @@
             }
         },
         {
+            "label": "flash w/ DapLink",
+            "args": [],
+            "type": "shell",
+            "command": "cd ../..;openocd -s /usr/share/openocd/scripts/ -s ${workspaceFolder}/scripts/ -f openocd_daplink.cfg -c 'program build/STM32 verify reset exit'; sleep 6",
+            "dependsOn": [
+                "build"
+            ],
+            "presentation": {
+                "reveal": "never"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
             "label": "flash_pyocd",
             "args": [],
             "type": "shell",
