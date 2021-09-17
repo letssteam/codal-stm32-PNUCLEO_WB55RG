@@ -33,6 +33,7 @@
         "USBCON": 1,
         "USBD_CLASS_BOS_ENABLED": 1,
         "USBD_USE_CDC": 1,
+        "USB_MAX_PKT_SIZE": 64,
         "USE_ACCEL_LSB": 0,
         "VARIANT": "variant_P_NUCLEO_WB55RG",
         "VARIANT_H": "\"variant_P_NUCLEO_WB55RG.h\""
@@ -63,7 +64,7 @@
     "processor": "STM32L4",
     "product_line": "STM32WB55xx",
     "series": "STM32WBxx",
-    "snapshot_version": "v1.0.1",
+    "snapshot_version": "v1.0.2",
     "toolchain": "ARM_GCC",
     "variant": "STM32WBxx/WB55R(C-E-G)V"
 }
