@@ -38,7 +38,7 @@ void BlinkScreen(codal::SSD1306* oled, uint32_t ms)
 
 void OledSample_main(codal::STM32PNUCLEO_WB55RG& pnucleoWB55RG)
 {
-    codal::SSD1306_I2C oled(pnucleoWB55RG.i2c1, 0x78, 128, 64, false);
+    codal::SSD1306_I2C oled(&pnucleoWB55RG.i2c1, 0x78, 128, 64, false);
 
     oled.init();
 
