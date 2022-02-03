@@ -63,7 +63,7 @@
     "processor": "STM32L4",
     "product_line": "STM32WB55xx",
     "series": "STM32WBxx",
-    "snapshot_version": "v1.0.14",
+    "snapshot_version": "v1.0.15",
     "toolchain": "ARM_GCC",
     "variant": "STM32WBxx/WB55R(C-E-G)V"
 }
