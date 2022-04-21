@@ -7,6 +7,6 @@
 #define SAMPLE_MAIN SerialSample_main
 #endif
 
-void SerialSample_main();
+void SerialSample_main(codal::STM32PNUCLEO_WB55RG& pnucleoWB55RG);
 
 #endif
