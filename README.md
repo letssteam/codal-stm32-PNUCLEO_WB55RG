@@ -1,4 +1,5 @@
-# Codal target for the PNUCLEO_WB55RG Board [![codal-stm32-PNUCLEO_WB55RG](https://img.shields.io/github/workflow/status/letssteam/codal-stm32-PNUCLEO_WB55RG/codal-buildtarget?label=codal-stm32-PNUCLEO_WB55RG)](https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG/actions)
+# Codal target for the PNUCLEO_WB55RG Board  [![codal-stm32-PNUCLEO_WB55RG](https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG/actions/workflows/codal-buildtarget.yml/badge.svg)](https://github.com/letssteam/codal-stm32-PNUCLEO_WB55RG/actions)
+
 
 Codal target for the [P-NUCLEO-WB55](https://www.st.com/en/evaluation-tools/p-nucleo-wb55.html). Codal is the core set of drivers, mechanisms and types that make up the runtime for a board in Makecode.
 
